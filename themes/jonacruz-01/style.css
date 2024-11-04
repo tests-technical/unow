@@ -1,0 +1,264 @@
+/*
+Theme Name: Jonacruz 01
+Theme URI: http://jonacruz.com
+Description: Una plantilla base personalizada para WordPress.
+Version: 1.0
+Author: Jonathan Cruz
+Author URI: http://jonacruz.com
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: jonacruz-01
+*/
+
+:root {
+  --background: #333;
+  --text: #fff;
+  --accent: #4caf50;
+  --copyright-bg: #222;
+}
+
+body {
+  margin: 0;
+  background: #222;
+  font-family: 'Arial', sans-serif;
+  font-weight: 400;
+  color: var(--text);
+}
+
+.header {
+  background: var(--background);
+  text-align: center;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 1em;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  background: var(--text);
+  height: 2px;
+  width: 2em;
+  border-radius: 2px;
+  position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  content: '';
+  position: absolute;
+}
+
+.nav-toggle-label span::before {
+  bottom: 7px;
+}
+
+.nav-toggle-label span::after {
+  top: 7px;
+}
+
+nav {
+  position: absolute;
+  text-align: left;
+  top: 100%;
+  left: 0;
+  background: var(--background);
+  width: 100%;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 400ms ease-in-out;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  margin-bottom: 1em;
+  margin-left: 1em;
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+.nav-toggle:checked ~ nav {
+  transform: scale(1, 1);
+}
+
+.nav-toggle:checked ~ nav a {
+  opacity: 1;
+  transition: opacity 250ms ease-in-out 250ms;
+}
+
+main {
+  min-height: calc(100vh - 70px - 300px);
+  padding: 90px 20px 20px;
+}
+
+/* Footer Styles */
+.footer {
+  background: var(--background);
+  color: var(--text);
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  padding: 2em 1em;
+}
+
+.footer-section {
+  margin-bottom: 2em;
+}
+
+.footer-section h3 {
+  color: var(--accent);
+  margin-bottom: 0.5em;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.5em;
+}
+
+.footer-section a {
+  color: var(--text);
+  text-decoration: none;
+  transition: color 250ms ease-in-out;
+}
+
+.footer-section a:hover {
+  color: var(--accent);
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
+.social-icon {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: var(--text);
+  color: var(--background);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  transition: background 250ms ease-in-out, color 250ms ease-in-out;
+}
+
+.social-icon:hover {
+  background: var(--accent);
+  color: var(--text);
+}
+
+.copyright {
+  background: var(--copyright-bg);
+  text-align: center;
+  padding: 1em;
+  font-size: 0.9em;
+}
+
+@media screen and (min-width: 800px) {
+  .nav-toggle-label {
+    display: none;
+  }
+
+  .header {
+    display: grid;
+    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+  }
+
+  .logo {
+    grid-column: 2 / 3;
+  }
+
+  nav {
+    all: unset;
+    grid-column: 3 / 4;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  nav ul {
+    display: flex;
+  }
+
+  nav li {
+    margin-left: 3em;
+    margin-bottom: 0;
+  }
+
+  nav a {
+    opacity: 1;
+    position: relative;
+  }
+
+  nav a::before {
+    content: '';
+    display: block;
+    height: 5px;
+    background: var(--accent);
+    position: absolute;
+    top: -0.75em;
+    left: 0;
+    right: 0;
+    transform: scale(0, 1);
+    transition: transform ease-in-out 250ms;
+  }
+
+  nav a:hover::before {
+    transform: scale(1, 1);
+  }
+
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: left;
+    padding: 2em;
+  }
+
+  .footer-section {
+    margin-bottom: 0;
+  }
+
+  .social-icons {
+    justify-content: flex-start;
+  }
+}
