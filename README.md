@@ -1,17 +1,26 @@
-# Contact Form Plugin
+# Realizar deploy en local
 
-A simple WordPress plugin that adds a contact form shortcode and stores submissions in the database.
+Ejecutar utilizan make
 
-## Description
+`make up`
 
-This plugin adds a `[contact_form]` shortcode that you can use to display a contact form on any page or post. Submissions are stored in the database and can be viewed in the WordPress admin area.
+Sino se tiene make, ejecutar con docker
 
-## Installation
+`docker compose up -d --build`
 
-1. Upload the `contact-form-plugin` folder to the `/wp-content/plugins/` directory
-2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Place the `[contact_form]` shortcode in your pages or posts
+# Configurar wordpress
 
-## Usage
-
-To display the contact form, simply add the following shortcode to any page or post:
+1. Acceder a la url http://localhost:8000
+2. Configurar la base de datos, puede utilizar los datos que desee
+3. Configurar el usuario y contraseña de wordpress
+4. Configurar el sitio
+5. Instalar el theme que se encuentra en la carpeta theme, el archivo se llama `jonacruz-01.zip`
+6. Activar el theme
+7. Instalar el plugin que se encuentra en la carpeta plugin, el archivo se llama `jonacruz-01.zip`
+8. Activar el plugin
+9. En la entrada existente agregar el shortcode `[contact_form]`
+10. Guardar la entrada
+11. Ir al home para ver el theme y el plugin instalado al final de la página
+12. Ingresar datos en el formulario y enviar
+13. Ver datos registrados en el admin de wordpress
+14. Listo!
