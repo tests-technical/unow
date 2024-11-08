@@ -1,32 +1,16 @@
 </main>
-<footer class="footer">
-    <div class="footer-content">
-        <?php if (is_active_sidebar('footer-widget-area')) : ?>
-            <?php dynamic_sidebar('footer-widget-area'); ?>
-        <?php else : ?>
-            <div class="footer-section">
-                <h3><?php _e('About Us', 'jonacruz-01-theme'); ?></h3>
-                <p><?php bloginfo('description'); ?></p>
+
+<footer class="bg-white">
+    <div class="container mx-auto px-4 py-8">
+        <div class="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:justify-between sm:space-y-0">
+            <div class="flex items-center space-x-1 text-gray-600">
+                <span>&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. All rights reserved.</span>
             </div>
-            <div class="footer-section">
-                <h3><?php _e('Quick Links', 'jonacruz-01-theme'); ?></h3>
-                <?php
-                wp_nav_menu(array(
-                    'theme_location' => 'footer',
-                    'container' => false,
-                    'menu_class' => '',
-                ));
-                ?>
+            <div class="flex items-center space-x-2 text-gray-600">
+                <span>Made with</span>
+                <span>by <?php bloginfo('name'); ?> Team</span>
             </div>
-            <div class="footer-section">
-                <h3><?php _e('Contact Us', 'jonacruz-01-theme'); ?></h3>
-                <p>Email: info@example.com</p>
-                <p>Phone: (123) 456-7890</p>
-            </div>
-        <?php endif; ?>
-    </div>
-    <div class="copyright">
-        <p>&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. <?php _e('All rights reserved.', 'jonacruz-01-theme'); ?></p>
+        </div>
     </div>
 </footer>
 <?php wp_footer(); ?>
