@@ -15,3 +15,23 @@ This plugin adds a `[contact_form]` shortcode that you can use to display a cont
 ## Usage
 
 To display the contact form, simply add the following shortcode to any page or post:
+
+
+[contact_form]
+
+## Viewing Submissions
+
+To view form submissions:
+
+1. Log in to your WordPress admin area
+2. Navigate to the "Contact Submissions" menu item in the sidebar
+3. You'll see a list of all submissions, with the most recent at the top
+
+## Changelog
+
+### 1.0
+* Initial release
+
+## License
+
+This plugin is licensed under the GPL v2 or later.
