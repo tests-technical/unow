@@ -99,4 +99,8 @@
     </div>
 </section>
 
+<section>
+    <?php the_content(); ?>
+</section>
+
 <?php get_footer(); ?>
