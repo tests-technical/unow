@@ -1,1 +1,4 @@
 db_data
+vendor
+composer.lock
+.phpunit.result.cache

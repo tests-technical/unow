@@ -24,3 +24,19 @@ Sino se tiene make, ejecutar con docker
 12. Ingresar datos en el formulario y enviar
 13. Ver datos registrados en el admin de wordpress
 14. Listo!
+
+# Realizar pruebas
+
+Ejecutar los siguientes comandos
+
+`make bash`
+
+`composer require --dev phpunit/phpunit ^9`
+
+`composer require --dev yoast/phpunit-polyfills:"^3.0"`
+
+`wp scaffold plugin-tests jonacruz-01 --allow-root`
+
+<!-- `bash wp-content/plugins/jonacruz-01/bin/install-wp-tests.sh unow_test unow unow db latest` -->
+
+`vendor/bin/phpunit --configuration wp-content/plugins/jonacruz-01/phpunit.xml.dist`
